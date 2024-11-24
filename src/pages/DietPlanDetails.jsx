@@ -1,4 +1,4 @@
-// src/pages/DietPlanDetails.jsx
+
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setSelectedDiet } from "../redux/dietSlice";
@@ -7,7 +7,7 @@ const DietPlanDetails = () => {
   const { planType } = useParams();
   const dispatch = useDispatch();
 
-  // Check if planType exists before using it
+  
   if (!planType) {
     return (
       <div className="container mx-auto py-8">
@@ -19,7 +19,7 @@ const DietPlanDetails = () => {
     );
   }
 
-  // Define diet plans
+  
   const plans = {
     "weight-loss":
       "This is a detailed Weight Loss diet plan. It focuses on low-calorie, nutrient-dense foods.",
@@ -27,7 +27,7 @@ const DietPlanDetails = () => {
       "This is a detailed Weight Gain diet plan. It is high in calories and protein to help build muscle.",
   };
 
-  // Save the selected diet in Redux
+  
   const selectedPlan = plans[planType];
   dispatch(setSelectedDiet(selectedPlan));
 
